@@ -157,7 +157,7 @@ namespace ExcelInventory
                     index++;
                 }
 
-                openFileDialog2.InitialDirectory = Directory.GetCurrentDirectory() + "\\assets\\exportFiles";
+                saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\assets\\exportFiles";
                 saveFileDialog1.ShowDialog();
                 excel.saveAsExcelFile(saveFileDialog1.FileName);
                 clearAll();
