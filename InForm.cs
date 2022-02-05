@@ -19,14 +19,14 @@ namespace ExcelInventory
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 form2 = new Form2();
+            ImageImport form2 = new ImageImport();
             form2.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form1 = new Form1();
+            Scanner form1 = new Scanner();
             form1.Show();
         }
     }

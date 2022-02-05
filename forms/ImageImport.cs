@@ -9,13 +9,13 @@ using System.Text.RegularExpressions;
 
 namespace ExcelInventory
 {
-    public partial class Form2 : Form
+    public partial class ImageImport : Form
     {
         Excel excel;
         List<string> imgList;
         List<string> imgNamesList;
 
-        public Form2()
+        public ImageImport()
         {
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
@@ -60,7 +60,7 @@ namespace ExcelInventory
         private void scannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form1 = new Form1();
+            Scanner form1 = new Scanner();
             form1.Show();
         }
 

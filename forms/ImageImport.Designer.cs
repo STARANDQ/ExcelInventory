@@ -1,6 +1,6 @@
 ﻿namespace ExcelInventory
 {
-    partial class Form2
+    partial class ImageImport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageImport));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -180,7 +180,7 @@
             this.saveFileDialog1.FileName = "export.xlsx";
             this.saveFileDialog1.Filter = "Excel Files|*.xlsx;*.xls";
             // 
-            // Form2
+            // ImageImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form2";
+            this.Name = "ImageImport";
             this.Text = "ImageImport";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.menuStrip1.ResumeLayout(false);
