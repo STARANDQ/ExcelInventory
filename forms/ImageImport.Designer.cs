@@ -124,9 +124,10 @@
             // 
             // textBox1
             // 
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(6, 41);
-            this.textBox1.MaxLength = 3;
+            this.textBox1.MaxLength = 1;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 22);
             this.textBox1.TabIndex = 9;

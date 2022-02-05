@@ -62,6 +62,7 @@ namespace ExcelInventory
 
         private void scannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            clearAll();
             this.Hide();
             Scanner form1 = new Scanner();
             form1.Show();
@@ -75,6 +76,7 @@ namespace ExcelInventory
 
         private void button1_Click(object sender, EventArgs e)
         {
+            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\assets\\importFiles";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 button1.Text = openFileDialog1.SafeFileName;
@@ -88,8 +90,7 @@ namespace ExcelInventory
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Regex regex1 = new Regex(@"^[A-Z]{1}$");
-            if (regex1.IsMatch(textBox1.Text))
+            if (new Regex(@"^[A-Z]{1}$").IsMatch(textBox1.Text))
             {
                 button2.Enabled = true;
             } else
@@ -100,20 +101,24 @@ namespace ExcelInventory
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (textBox1.Text.Length == 0)
-                if (e.KeyChar == '0') e.Handled = true;
+            if (Char.IsDigit(e.KeyChar) || new Regex(@"^[А-Яа-я]{1}$").IsMatch(e.KeyChar.ToString()))
+                e.Handled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openFileDialog2.ShowDialog();
-            imgList = new List<string>(openFileDialog2.FileNames);
-            imgNamesList = new List<string>();
-            foreach (string imgName in openFileDialog2.SafeFileNames)
+            openFileDialog2.InitialDirectory = Directory.GetCurrentDirectory() + "\\assets\\img";
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
-                imgNamesList.Add(Regex.Replace(imgName, @"\..+$", "", RegexOptions.Multiline));
-            }
-            button3.Enabled = imgNamesList.Count != 0 ? true : false;
+                imgList = new List<string>(openFileDialog2.FileNames);
+                imgNamesList = new List<string>();
+                foreach (string imgName in openFileDialog2.SafeFileNames)
+                {
+                    imgNamesList.Add(Regex.Replace(imgName, @"\..+$", "", RegexOptions.Multiline));
+                }
+                button3.Enabled = imgNamesList.Count != 0 ? true : false;
+            } else
+                MessageBox.Show("Select files", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -152,6 +157,7 @@ namespace ExcelInventory
                     index++;
                 }
 
+                openFileDialog2.InitialDirectory = Directory.GetCurrentDirectory() + "\\assets\\exportFiles";
                 saveFileDialog1.ShowDialog();
                 excel.saveAsExcelFile(saveFileDialog1.FileName);
                 clearAll();
