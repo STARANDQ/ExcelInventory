@@ -15,7 +15,7 @@ namespace ExcelInventory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InForm());
+            Application.Run(new Main());
         }
     }
 }

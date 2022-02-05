@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ExcelInventory
 {
-    public partial class InForm : Form
+    public partial class Main : Form
     {
-        public InForm()
+        public Main()
         {
             InitializeComponent();
         }

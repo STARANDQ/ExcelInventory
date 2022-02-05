@@ -112,11 +112,11 @@
     <Compile Include="forms\ImageImport.Designer.cs">
       <DependentUpon>ImageImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="InForm.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InForm.Designer.cs">
-      <DependentUpon>InForm.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="forms\ImageImport.resx">
       <DependentUpon>ImageImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InForm.resx">
-      <DependentUpon>InForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,6 +139,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ExcelInventory\assets\importFiles\import.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,7 +159,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ExcelInventory\assets\img\1234125419.png" />
+    <Content Include="ExcelInventory\assets\img\1234125512.png" />
+    <Content Include="ExcelInventory\assets\img\1234125519.png" />
+    <Content Include="ExcelInventory\assets\img\1234127512.png" />
+    <Content Include="ExcelInventory\EPPlus.dll" />
+    <Content Include="ExcelInventory\EPPlus.xml" />
+    <Content Include="ExcelInventory\ExcelInventory.exe" />
+    <Content Include="ExcelInventory\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="ExcelInventory\Microsoft.IO.RecyclableMemoryStream.xml" />
     <Content Include="img\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExcelInventory\assets\exportFiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
