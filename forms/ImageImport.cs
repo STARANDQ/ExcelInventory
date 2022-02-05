@@ -11,7 +11,7 @@ namespace ExcelInventory
 {
     public partial class ImageImport : Form
     {
-        Excel excel;
+        Excel excel = null;
         List<string> imgList;
         List<string> imgNamesList;
 
@@ -36,7 +36,10 @@ namespace ExcelInventory
 
         private void clearAll()
         {
-            excel.closeExcelApp();
+            if(excel != null)
+            {
+                excel.closeExcelApp();
+            }
             openFileDialog1.FileName = String.Empty;
             for (int i = 0; i < openFileDialog2.FileNames.Length; i++)
             {
@@ -66,6 +69,7 @@ namespace ExcelInventory
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
+            clearAll();
             System.Windows.Forms.Application.Exit();
         }
 
