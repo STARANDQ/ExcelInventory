@@ -51,19 +51,6 @@ namespace ExcelInventory
                 return null;
             }
         }
-
-        public void writeToCell(int sheet, int row, int col, string s)
-        {
-            try
-            {
-                wsList[sheet].Cells[row, col].Value2 = s;
-            }
-            catch (Exception e)
-            {
-                wb.Close();
-                Console.WriteLine("Error: " + e);
-            }
-        }
         
         public void addImgToCell(int sheet, int row, int col, string img)
         {

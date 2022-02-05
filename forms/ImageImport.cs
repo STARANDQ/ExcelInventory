@@ -158,9 +158,15 @@ namespace ExcelInventory
                 }
 
                 saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\assets\\exportFiles";
-                saveFileDialog1.ShowDialog();
-                excel.saveAsExcelFile(saveFileDialog1.FileName);
-                clearAll();
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    excel.saveAsExcelFile(saveFileDialog1.FileName);
+                    clearAll();
+                }
+                else
+                {
+                    MessageBox.Show("Save File", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             } else
                 MessageBox.Show("Coloumn dosn't have ids", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
